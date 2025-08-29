@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- Fonte moderna -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(135deg, #1e272e, #2f3640, #353b48);
+        color: #f5f6fa;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      header {
+        flex: 0 0 60px;
+        width: 100%;
+        background: linear-gradient(90deg, #00a8ff, #0097e6);
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      iframe {
+        width: 60%;
+        height: 80vh;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        background: white;
+      }
+
+      footer {
+        flex: 0 0 40px;
+        width: 100%;
+        text-align: center;
+        font-size: 0.85rem;
+        color: #dcdde1;
+        background: #2f3640;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Ó CABA LÁ - HISTÓRICO DE JOGOS</header>
+
+    <main>
+      <iframe
+        src="https://lookerstudio.google.com/embed/reporting/39ba6ad7-4991-4f0d-a7d8-a1751c63947a/page/jNCWF"
+        allowfullscreen
+        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+      ></iframe>
+    </main>
+
+    <footer>By Zimmer 🚀</footer>
+  </body>
+</html>

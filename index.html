@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <!-- Fonte moderna -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
@@ -26,7 +25,6 @@
 
       header {
         flex: 0 0 60px;
-        width: 100%;
         background: #2f3640;
         color: white;
         font-size: 1.4rem;
@@ -39,20 +37,19 @@
       }
 
       main {
-        flex: 1;
+        flex: 1; /* ocupa todo o espaço entre header e footer */
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 20px 80px;
+        padding: 20px 80px; /* só padding lateral, sem mexer na altura */
       }
 
       iframe {
         width: 100%;
-        height: 100%;
+        height: 100%; /* sempre acompanha o main */
         border: none;
         border-radius: 12px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        overflow: hidden;
       }
 
       footer {
@@ -70,14 +67,10 @@
 
       @media screen and (max-width: 900px) {
         main {
-          height: 80%;
-          width: 90%;
-          padding: 10px;
-          margin: 0 auto;
+          padding: 20px;
         }
-
         #myIframe {
-          height: 90%;
+          width: 95%; /* ajuste largura no mobile */
         }
       }
     </style>
@@ -109,10 +102,7 @@
       }
     }
 
-    // chama uma vez quando a página carrega
     setIframeSrc();
-
-    // se o cara redimensionar a tela, troca o link também
     window.addEventListener("resize", setIframeSrc);
   </script>
 </html>

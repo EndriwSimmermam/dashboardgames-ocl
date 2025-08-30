@@ -66,6 +66,12 @@
         justify-content: center;
         letter-spacing: 0.5px;
       }
+
+    @media screen and (max-width: 900px) {
+    #myIframe {
+      width: 95%;
+    }
+  }
     </style>
   </head>
   <body>
@@ -73,6 +79,7 @@
 
     <main>
       <iframe
+        id="myIframe"
         src="https://lookerstudio.google.com/embed/reporting/39ba6ad7-4991-4f0d-a7d8-a1751c63947a/page/jNCWF"
         allowfullscreen
         sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
@@ -81,4 +88,21 @@
 
     <footer>By Zimmer</footer>
   </body>
+<script>
+  const iframe = document.getElementById("myIframe");
+
+  function setIframeSrc() {
+    if (window.innerWidth < 900) {
+      iframe.src = "https://lookerstudio.google.com/embed/reporting/e786080e-8894-4197-ae9e-a32f484c36ef/page/jNCWF";
+    } else {
+      iframe.src = "https://lookerstudio.google.com/embed/reporting/39ba6ad7-4991-4f0d-a7d8-a1751c63947a/page/jNCWF";
+    }
+  }
+
+  // chama uma vez quando a página carrega
+  setIframeSrc();
+
+  // se o cara redimensionar a tela, troca o link também
+  window.addEventListener("resize", setIframeSrc);
+</script>
 </html>

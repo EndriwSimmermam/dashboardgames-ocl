@@ -37,20 +37,11 @@
       }
 
       main {
-        flex: 1; /* ocupa todo espaço entre header e footer */
+        flex: 1;
         display: flex;
-        align-items: center; /* centraliza vertical */
-        justify-content: center; /* centraliza horizontal */
+        align-items: center;
+        justify-content: center;
         padding: 10px;
-      }
-
-      iframe {
-        width: 80%;
-        height: 80vh;
-        max-height: 100%; /* nunca passa do espaço do main */
-        border: none;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
       }
 
       footer {
@@ -66,11 +57,39 @@
         letter-spacing: 0.5px;
       }
 
-      /* celular */
-      @media screen and (max-width: 900px) {
-        iframe {
+      iframe {
+        border: 0;
+        width: 100%;
+        height: auto;
+      }
+
+      /* PC */
+      #iframePC {
+        max-width: 1280px;
+        aspect-ratio: 16 / 9; /* mantém proporção 1280x720 */
+        display: block;
+      }
+
+      /* Mobile hidden by default */
+      #iframeMB {
+        display: none;
+      }
+
+      /* Mobile */
+      @media (max-width: 900px) {
+        #iframePC {
+          display: none;
+        }
+
+        header{
+          font-size: large;
+        }
+
+        #iframeMB {
+          display: block;
+          max-width: 860px;
+          aspect-ratio: 86 / 106; /* mantém proporção 860x1060 */
           width: 100%;
-          height: 50vh;
         }
       }
     </style>
@@ -80,8 +99,15 @@
 
     <main>
       <iframe
-        id="myIframe"
+        id="iframePC"
         src="https://lookerstudio.google.com/embed/reporting/39ba6ad7-4991-4f0d-a7d8-a1751c63947a/page/jNCWF"
+        allowfullscreen
+        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+      ></iframe>
+
+      <iframe
+        id="iframeMB"
+        src="https://lookerstudio.google.com/embed/reporting/e786080e-8894-4197-ae9e-a32f484c36ef/page/jNCWF"
         allowfullscreen
         sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
       ></iframe>
@@ -89,20 +115,4 @@
 
     <footer>By Zimmer</footer>
   </body>
-  <script>
-    const iframe = document.getElementById("myIframe");
-
-    function setIframeSrc() {
-      if (window.innerWidth < 900) {
-        iframe.src =
-          "https://lookerstudio.google.com/embed/reporting/e786080e-8894-4197-ae9e-a32f484c36ef/page/jNCWF";
-      } else {
-        iframe.src =
-          "https://lookerstudio.google.com/embed/reporting/39ba6ad7-4991-4f0d-a7d8-a1751c63947a/page/jNCWF";
-      }
-    }
-
-    setIframeSrc();
-    window.addEventListener("resize", setIframeSrc);
-  </script>
 </html>
